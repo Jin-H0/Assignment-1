@@ -1,0 +1,265 @@
+/* ==========================================================================
+   1. Reset & General Styles (ปรับพื้นฐานหน้าเว็บ)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6; /* สีพื้นหลังเว็บโทนสว่างสบายตา */
+    color: #333333;
+}
+
+/* ซ่อนเส้นคั่น <hr> เดิมเพื่อใช้กล่อง Card แทน เพื่อความทันสมัย */
+main hr {
+    display: none; 
+}
+
+/* ==========================================================================
+   2. ส่วนหัวและโปรไฟล์ (Header) - แบบพื้นหลังรูปภาพเฟดๆ
+   ========================================================================== */
+header {
+    /* ใช้ linear-gradient ทำเป็นแผ่นฟิล์มสีฟ้าเข้มโปร่งแสง (0.8 คือความทึบ) ทับรูปภาพ */
+    background: linear-gradient(rgba(92, 98, 110, 0.8), rgba(0, 80, 200, 0.8)), url('images/pexels-sknafiz-28907898.jpg');
+    background-size: cover; /* บังคับให้รูปขยายเต็มพื้นที่ */
+    background-position: center; /* จัดให้รูปอยู่กึ่งกลาง */
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 4px solid #003366; /* เส้นขอบล่างสีน้ำเงินเข้ม */
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #ffffff; /* กรอบสีขาวรอบรูปโปรไฟล์ให้ดูเด่นขึ้น */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* เงาใต้รูป */
+}
+
+/* ปรับให้ตัวหนังสือใน Header เป็นสีขาวทั้งหมด และใส่เงาบางๆ ให้อ่านง่ายเมื่อทับบนรูป */
+header h1, 
+header h2, 
+header h3 {
+    color: #ffffff; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* เงาสีดำบางๆ หลังตัวหนังสือ */
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+header h2, header h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    opacity: 0.9; /* ทำให้ตัวหนังสือรองดูจางลงนิดหน่อย */
+}
+/* ==========================================================================
+   3. Navigation Menu (เมนูบาร์แบบยึดติดหน้าจอ)
+   ========================================================================== */
+nav {
+    background-color: #1f2937; /* สีเทาเข้มเกือบดำ */
+    position: sticky; /* ทำให้เมนูเลื่อนตามเมื่อ Scroll หน้าเว็บ */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* จัดเรียงเมนูเป็นแนวนอน */
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    color: #9ca3af;
+    text-decoration: none; /* ลบเส้นใต้ลิงก์ออก */
+    padding: 15px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease; /* ใส่ Effect เวลาชี้ให้ดูนุ่มนวล */
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: #374151; /* เปลี่ยนสีพื้นหลังเมนูเมื่อเอาเมาส์ไปชี้ */
+}
+
+/* ==========================================================================
+   4. Layout & Cards (จัดแต่งกล่องเนื้อหาหลัก)
+   ========================================================================== */
+main {
+    max-width: 900px; /* จำกัดความกว้างหน้าเว็บไม่ให้กระจายเกินไป */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: white;
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: 10px; /* ปรับขอบกล่องให้นวล */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* ใส่เงาบางๆ สไตล์มินิมอล */
+}
+
+section h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb; /* เส้นใต้หัวข้อข้อ */
+    padding-bottom: 10px;
+    font-size: 1.7rem;
+}
+
+#about p {
+    margin-bottom: 15px;
+    text-align: justify; /* จัดเนื้อหาให้อ่านง่าย */
+}
+
+/* ==========================================================================
+   5. Education Table (ปรับแต่งตารางเรียน)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse; /* ยุบขอบตารางซ้ำซ้อนออก */
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+td {
+    border-bottom: 1px solid #e5e7eb;
+    color: #4b5563;
+}
+
+tr:hover td {
+    background-color: #f9fafb; /* ไฮไลต์แถวตารางเมื่อเมาส์ชี้ */
+}
+
+/* ==========================================================================
+   6. Skills Section (เปลี่ยนจากจุดธรรมดาให้เป็นเม็ดยา/Pills Tag)
+   ========================================================================== */
+#skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* ถ้าล้นให้ขึ้นบรรทัดใหม่ */
+    gap: 10px; /* เว้นระยะห่างระหว่างแท็ก */
+}
+
+#skills ul li {
+    background-color: #e0f2fe; /* สีฟ้าอ่อน */
+    color: #0369a1; /* ตัวอักษรน้ำเงินเข้ม */
+    padding: 8px 16px;
+    border-radius: 20px; /* ทำมุมโค้งมนแบบเม็ดยา */
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   7. Projects Section (กล่องผลงาน)
+   ========================================================================== */
+article {
+    background-color: #f8fafc;
+    border-left: 4px solid #3b82f6; /* เพิ่มเส้นสีน้ำเงินหนาด้านซ้าย */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+article h3 {
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+article p {
+    margin-bottom: 5px;
+    color: #475569;
+}
+
+/* วิดีโอพรีเซนต์ */
+video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   8. Contact Form (ฟอร์มติดต่อ)
+   ========================================================================== */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: 600;
+    color: #4b5563;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* เมื่อคลิกพิมพ์ที่กล่องกรอกข้อมูล */
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #3b82f6; /* เปลี่ยนขอบเป็นสีน้ำเงิน */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); /* เพิ่มแสงเรืองๆ */
+}
+
+form button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2563eb; /* สีปุ่มเข้มขึ้นเมื่อเมาส์ชี้ */
+}
+
+/* ==========================================================================
+   9. Footer Section
+   ========================================================================== */
+footer {
+    background-color: #1f2937;
+    color: #9ca3af;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
